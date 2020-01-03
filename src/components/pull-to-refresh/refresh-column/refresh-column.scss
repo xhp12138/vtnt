@@ -1,0 +1,15 @@
+@import "../../../styles/mixins/index.scss";
+@include b(refresh-column) {
+   @include e(wrap) {
+       height: 20px;
+       line-height: 20px;
+       font-size: 14px; 
+       text-align: center;
+       @include m(up) {
+        margin-bottom: -20px;
+       }
+       @include m(down) {
+        margin-top: -20px;
+       }
+   }
+}

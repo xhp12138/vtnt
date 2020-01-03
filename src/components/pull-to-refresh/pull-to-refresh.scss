@@ -1,0 +1,14 @@
+@import "../../styles/mixins/index.scss";
+@include b(pull-to-refresh) {
+  @include e(wrap) {
+    overflow: hidden;
+  }
+  @include e(transition) {
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    transform-origin: left top 0;
+    -webkit-transform-origin: left top 0;
+  }
+  @include e(test) {
+    webkit-backface-visibility: hidden;
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "vtnt",
+  "version": "1.0.0",
+  "description": "a common components library",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run create && webpack-dev-server --config build/webpack.dev.conf.js",
+    "build": "cross-env NODE_ENV=production npm run create &&  webpack --config ./build/webpack.build.conf.js",
+    "create": "node ./build/create-components",
+    "test": "node ./build/create-components"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "typescript"
+  ],
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.3.0",
+    "vue-tsx-support": "^2.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-syntax-jsx": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.5.1",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.3.2",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.0.1",
+    "eslint-config-elemefe": "^0.3.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.2.0",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "json-templater": "^1.2.0",
+    "kebab-case": "^1.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.3",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "author": "813531550@qq.com",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
