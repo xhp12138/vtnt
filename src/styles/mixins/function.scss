@@ -1,0 +1,33 @@
+@mixin b($block,$isComponent:true) {
+    $B: $block !global;
+    $componentKey : if($isComponent,#{$name + '-' + $B},#{$B});
+    .#{$componentKey} {
+      @content;
+    }
+  }
+  @mixin e($val) {
+    $parent: &;
+    $select: #{$parent + $element + $val};
+    @at-root {
+      #{$select} {
+        @content;
+      }
+    }
+  }
+  @mixin m($val) {
+    $parent: &;
+    $select: #{$parent + $modifier + $val};
+    @at-root {
+      #{$select} {
+        @content;
+      }
+    }
+  }
+  @mixin border-size($border: 'center') {
+    $select : '::after';
+    @at-root {
+      #{$select} {
+         border:none;
+      }
+    }
+  }

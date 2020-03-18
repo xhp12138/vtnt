@@ -1,0 +1,28 @@
+
+@import "../../src/styles/mixins/index.scss";
+@import '../../src/styles/resets.scss';
+@include b(ds,false) {
+    @include e(wrap) {
+        height: 100%;
+        padding-top: 50px;
+        box-sizing: border-box;
+    }
+    @include e(main-block) {
+        float: left;
+        @include m(left) {
+            width: 200px;
+            margin-left: -100%;
+        }
+        @include m(main) {
+            width: 100%;
+        }
+        @include m(right) {
+            width: 400px;
+            margin-left: -400px;
+        }
+    }
+    @include e(content) {
+        margin: 0 400px 0 200px;
+    }
+
+}

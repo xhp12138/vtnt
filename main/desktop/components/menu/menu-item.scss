@@ -1,0 +1,11 @@
+@import "../../styles/index.scss";
+@include b(menu-item,true) {
+    padding: 0 20px;
+    height: $menu-item-height;
+    line-height: $menu-item-height;
+    text-align: center;
+    @include m (active) {
+        background: $menu-item-active-bg;
+        color:$theme-color;
+    }
+}

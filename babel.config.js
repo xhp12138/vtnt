@@ -5,15 +5,18 @@ const targets = !env
 module.exports = function(api) {
   api.cache(true);
   const presets = [
-    '@babel/env',
+    ['@babel/env',{ 
+       modules:false
+    }],
     '@babel/preset-typescript', // TODO  这里使用bable 转换 typescript
     '@vue/babel-preset-jsx' // TODO 转vue中的jsx
   ];
   const plugins = [
-    '@babel/plugin-transform-runtime',
+    // '@babel/plugin-transform-runtime',
     ["@babel/plugin-proposal-decorators",{
       legacy:true
-    }]
+    }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
   ];
 
   return {

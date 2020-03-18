@@ -1,0 +1,39 @@
+@import "../../styles/index.scss";
+
+@include b(sub-menu, true) {
+    & .vtnt-icon-arrow-down {
+        transition: transform .3s ;
+    }
+    @include e(title-wrap) {
+        height: $menu-item-height;
+        line-height: $menu-item-height;
+        padding: 0 20px;
+        position: relative;
+        text-align: center;
+        .vtnt-icon-arrow-down {
+            position: absolute;
+            top: 50%;
+            right: 20px; 
+            font-size: 12px;
+            margin-top:-6px;
+        }
+        @include m(open) {
+            & > .vtnt-icon-arrow-down {
+                transform: rotate(180deg);   
+            }
+        }
+    }
+    @include e(content) {
+        overflow: hidden;
+    }
+
+}
+ 
+//transtion 
+
+.vtnt-submenu-enter {
+    transition: height .3s ease;
+}
+.vtnt-submenu-leave {
+    transition: all .3s ease-out;
+}

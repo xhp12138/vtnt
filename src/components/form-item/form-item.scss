@@ -1,0 +1,20 @@
+@import "../../styles/mixins/index.scss";
+@include b(form-item) {
+  @include e(wrap) {
+    font-size: $font-middle;
+    line-height: 24px;
+    padding:10px 15px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  @include e(require) {
+     color:$error;
+  }
+  @include e(label) {
+     float: left;
+     width: $font-item-label-width;
+  }
+  @include e(error-tips) {
+    margin-left: $font-item-label-width;
+    color:$error;
+  }
+}

@@ -1,35 +1,4 @@
 
 @import './config.scss';
 @import './var.scss';
-@mixin b($block) {
-    $B: $block !global;
-    .#{$name + '-' + $B} {
-      @content;
-    }
-  }
-  @mixin e($val) {
-    $parent: &;
-    $select: #{$parent + $element + $val};
-    @at-root {
-      #{$select} {
-        @content;
-      }
-    }
-  }
-  @mixin m($val) {
-    $parent: &;
-    $select: #{$parent + $modifier + $val};
-    @at-root {
-      #{$select} {
-        @content;
-      }
-    }
-  }
-  @mixin border-size($border: 'center') {
-    $select : '::after';
-    @at-root {
-      #{$select} {
-         border:none;
-      }
-    }
-  }
+@import './function.scss';

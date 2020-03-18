@@ -1,0 +1,23 @@
+{
+  "id": "1452812",
+  "name": "stocket",
+  "font_family": "iconfont",
+  "css_prefix_text": "sk",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "122163",
+      "name": "笑脸",
+      "font_class": "smiling",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "11474197",
+      "name": "arrow-down",
+      "font_class": "arrow-down",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    }
+  ]
+}

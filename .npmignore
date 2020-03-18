@@ -1,0 +1,11 @@
+src/
+main/
+build/
+node_modules/
+.eslintrc.js
+.eslintignore
+.gitignore
+.npmignore
+tsconfig.json
+package-lock.json
+babel.config.js

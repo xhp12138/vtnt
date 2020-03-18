@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+    "resolveJsonModule":true,
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -21,7 +22,8 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "types":["node"]
   },
   "exclude": [
     //"node_modules"
@@ -29,6 +31,8 @@
   "include": [ 
     "node_modules/vue-tsx-support/enable-check.d.ts",
     "src/**/*.ts",
-    "main/*.ts"
+    "main/*.ts", 
+    "main/**/*.tsx", 
+    "main/mobile/index.ts"
   ]
 }

@@ -1,9 +1,8 @@
 
-import { Vue, Component, Prop, Mixins } from "vue-property-decorator";
-import { Watch } from 'vue-property-decorator';
-import * as tsx from "vue-tsx-support";
+import { Vue, Component, Prop, Mixins,Watch } from "vue-property-decorator";
 import refreshColumn from "./refresh-column/refresh-column";
 import './pull-to-refresh.scss';
+import * as tsx from "vue-tsx-support";
 const loadingTypes = {
   initial: "initial",
   ready: "ready",
@@ -23,12 +22,12 @@ interface tips {
    down:text
 }
 @Component({
-  name: 'pull-to-refresh',
+  name: 'vtnt-pull-to-refresh',
   components: {
     refreshColumn
   }
 })
-export default class pullToRefresh extends tsx.Component<Props> {
+export default class vtntPullToRefresh extends tsx.Component<Props> {
   @Prop({
     type: Boolean,
     default: true

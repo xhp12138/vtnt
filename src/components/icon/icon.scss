@@ -1,0 +1,28 @@
+@import "../../styles/mixins/index.scss";
+
+@include b(icon) {
+  @include e(container) {
+    @include m(default) {
+        font-size:inherit;
+    }
+    @include m(font) {
+        font-family: "vtnt-icon" !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1;
+    }
+  }
+}
+
+@font-face {
+    font-family: 'vtnt-icon';
+    src: url('../../assets/iconfont/iconfont.eot');
+    src: url('../../assets/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/iconfont/iconfont.woff2') format('woff2'),
+        url('../../assets/iconfont/iconfont.woff') format('woff'),
+        url('../../assets/iconfont/iconfont.ttf') format('truetype'),
+        url('../../assets/iconfont/iconfont.svg#iconfont') format('svg');
+}
+.vtnt-icon-arrow-down:before {
+    content: '\e6eb';
+}
