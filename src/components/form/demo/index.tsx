@@ -1,4 +1,5 @@
 import { Vue, Component, Prop, Mixins, Watch } from "vue-property-decorator";
+import { VNode } from 'vue'
 @Component({
     name: 'vtnt-form-demo'
 })
@@ -16,7 +17,7 @@ export default class vtntFormDemo extends Vue {
     handleSubmit() {
         this.$refs.form.validator()
     }
-    render() {
+    render(): VNode {
         const { rules, params } = this;
         return <div>
             <vtnt-form ref="form" rules={rules} params={params}>

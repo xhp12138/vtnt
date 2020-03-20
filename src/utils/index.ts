@@ -62,6 +62,12 @@ export function isParentComponent(targetComponent:Vue, componentName:string | nu
           name = parent.$options.name ;
         }
     }
-    console.log(name)
     return name === componentName
+}
+
+export function on(element:Node,event:string,handler:(...args:Array<any>)=> void) {
+    return element.addEventListener(event,handler,false);
+}
+export function off(element:Node,event:string,handler:(...args:Array<any>)=> void) {
+    return element.removeEventListener(event,handler,false)
 }

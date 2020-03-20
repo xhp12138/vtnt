@@ -12,7 +12,7 @@ export default class mobileWrap extends Vue {
     }
     render(): VNode { 
         return (<div class="mw__wrap">
-            <iframe frameborder="0" name='mobile' allowtransparency="true" scrolling='no' src={this.src}></iframe>
+            <iframe frameborder="0" name='mobile' allowtransparency={true} scrolling='no' src={this.src}></iframe>
         </div>) 
     }
 }
