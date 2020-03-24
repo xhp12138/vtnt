@@ -1,0 +1,53 @@
+@import "../../styles/mixins/index.scss";
+@include b(upload) {
+    @include e(file-list) {
+        display: flex;
+        justify-content: flex-start;
+    }
+    @include e(file-item) {
+        width: $file-width;
+        height: $file-width;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin:0 5px 5px 0;
+        @include m(add) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:1px dotted #e5e5e5;
+        }
+    }
+    @include e(file-mask) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        color: #ffffff;
+        > span {
+            font-size: 12px;
+            margin: 5px 0 0 0;
+        }
+    }
+    @include e(file-img) {
+        width: $file-width;
+        height: $file-width;
+    }
+    @include e(input) {
+       overflow: hidden; 
+       opacity: 0;
+       position: absolute;
+       left: 0;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       width: 100%;
+       height: 100%;
+    }
+}

@@ -2,8 +2,8 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-18 13:33:34
- * @LastEditTime: 2020-03-19 17:11:30
- * @FilePath: /hpxin/mywork/myStudy/vtnt/README.md
+ * @LastEditTime: 2020-03-24 11:11:09
+ * @FilePath: /mywork/myStudy/vtnt/README.md
  -->
 
 <h1>
@@ -17,6 +17,11 @@ VTNT
 - input(输入框)
 - pull-to-refresh(上拉加载/下拉刷新)
 - slider(滑块)
+- upload(上传)
+
+## Features
+- 完整引入 
+- 支持TypeScript
 
 ## Build Setup
 

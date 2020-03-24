@@ -15,14 +15,20 @@
 }
 
 @font-face {
-    font-family: 'vtnt-icon';
-    src: url('../../assets/iconfont/iconfont.eot');
-    src: url('../../assets/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
-        url('../../assets/iconfont/iconfont.woff2') format('woff2'),
-        url('../../assets/iconfont/iconfont.woff') format('woff'),
-        url('../../assets/iconfont/iconfont.ttf') format('truetype'),
-        url('../../assets/iconfont/iconfont.svg#iconfont') format('svg');
+  font-family: 'vtnt-icon';  /* project id 1708838 */
+  src: url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot');
+  src: url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.svg#iconfont') format('svg');
 }
 .vtnt-icon-arrow-down:before {
-    content: '\e6eb';
+    content: '\e625';
+}
+.vtnt-icon-add::before {
+  content: '\e601';
+}
+.vtnt-icon-error::before {
+  content: '\e621';
 }

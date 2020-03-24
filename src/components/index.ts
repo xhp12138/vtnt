@@ -6,13 +6,14 @@ import icon from './icon/'
 import input from './input/'
 import pullToRefresh from './pull-to-refresh/'
 import slider from './slider/'
-const components = [form,formItem,icon,input,pullToRefresh,slider]
+import upload from './upload/'
+const components = [form,formItem,icon,input,pullToRefresh,slider,upload]
 const install = () => {
     components.forEach((component) => {
         vue.use(component)
     })
 }
-export {form,formItem,icon,input,pullToRefresh,slider}
+export {form,formItem,icon,input,pullToRefresh,slider,upload}
 export default {
     install
 }
