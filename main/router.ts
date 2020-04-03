@@ -17,7 +17,6 @@ const createRouter = (mobile = false) => {
       component: () => import(`@/${path}`) //TODO 采用模板字符串传入的方式解决import 动态加载失败的问题
     })
   }
-  console.log(routes);
   return new VueRouter({
     mode: 'hash',
     routes

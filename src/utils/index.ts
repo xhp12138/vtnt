@@ -1,33 +1,35 @@
 
 import { Vue } from 'vue-property-decorator';
 
+export type paramResultValue = object | Array<any>
+export class paramResult {
+    l:boolean
+    v:paramResultValue
+    constructor(l:boolean = false,v:paramResultValue = []) {
+        this.l = l
+        this.v = v
+    }
+}
 export const checkParam = (param:object | Array<any>,type = 'array',key:string = '') => {
     const k = key.replace(/^\s+|\s+$/g,'');
-    const result:any = {
-        l: false,
-        v: ''
-    }
-    console.log(param)
+    let result
     if (type === 'array') {
         if (Array.isArray(param) && param.length > 0) {
-            result.l = true;
-            result.v = param;
+            result = new paramResult(true, param)
         } else {
-            result.v = [];
+            result = new paramResult(false,[])
         }
     } else if (type === 'object.length') {
         if (isObject(param) && Object.keys(param).length >0) {
-            result.l = true;
-            result.v = param;
+            result = new paramResult(true,param)
         }else {
-            result.v = {}
+            result = new paramResult(false,{})
         }
     } else {
         if (isObject(param) && param[k] !== undefined ) {
-            result.l = true;
-            result.v = param[k]
+            result = new paramResult(true,param[k])
         }else {
-            result.v = {}
+            result = new paramResult(false,{})
         }
     }
     return result;

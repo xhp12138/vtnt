@@ -1,39 +1,48 @@
-import { Vue, Component, Prop, Mixins, Watch } from "vue-property-decorator";
-import penetrateMixins from '@/mixins/penetrate';
-@Component({
-    name: 'vtnt-form'
-})
-export default class vtntForm extends Mixins(penetrateMixins) {
-    @Prop({
-        type: Object
-    })
-    readonly params!: object;
-    @Prop({
-        type: Object,
-        default: function () {
-            return {}
+import Vue from 'vue';
+interface data {
+    formItemCpt: Array<Vue>
+}
+const vtntForm = Vue.extend({
+    name: 'vtnt-form',
+    data():data {
+        return {
+            formItemCpt: []
         }
-    })
-    readonly rules!: object;
-    formItemCpt:Array<Vue> = [];
+    },
+    props: {
+        params: {
+            type:Object
+        },
+        rules: {
+            type:Object,
+            default() {
+                return {}
+            }
+        }
+    },
     created() {
         this.$on('form.addItem',(component:any)=> {
             this.formItemCpt.push(component)
             component.setFormCpt(this)
         })
-    }
-    validator() {
-        const promiseList = this.formItemCpt.map((i:any)=> i.validator());
-        console.log(promiseList)
-         Promise.all(promiseList).then(res => {
-            console.log('res',res);
-        }).catch(error => {
-            console.log('error',error)
-        })
-    }
+    },
+    methods: {
+        validator() {
+            const promiseList = this.formItemCpt.map((i:any)=> i.validator());
+            console.log(promiseList)
+             Promise.all(promiseList).then(res => {
+                console.log('res',res);
+            }).catch(error => {
+                console.log('error',error)
+            })
+        }
+    },
     render() {
         return <form>
             {this.$slots.default}
         </form>
     }
-}
+
+})
+vtntForm.cptName ='vtntForm'
+export default vtntForm;

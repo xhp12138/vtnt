@@ -6,7 +6,7 @@ module.exports = function(api) {
   api.cache(true);
   const presets = [
     ['@babel/env',{ 
-       modules:false
+       modules:false,
     }],
     '@babel/preset-typescript', // TODO  这里使用bable 转换 typescript
     '@vue/babel-preset-jsx' // TODO 转vue中的jsx

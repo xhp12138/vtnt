@@ -1,62 +1,53 @@
 
 
-import { Vue, Component, Prop, Mixins } from "vue-property-decorator";
-import * as tsx from "vue-tsx-support";
+import Vue from 'vue';
 import './refresh-column.scss';
-interface Props {
-  type:string
-}
-@Component({
-
-})
-export default class refreshColumn extends tsx.Component<Props> {
-  @Prop({
-    type: String
-  })
-  readonly type!: string;
-  @Prop({
-    type:Boolean
-  })
-  readonly up!:boolean;
-  @Prop({
-    type:Boolean
-  })
-  readonly down !:boolean;
-  @Prop({
-    type: String,
-    default: '上拉可以加载更多'
-  })
-  readonly initial!: string;
-  @Prop({
-    type: String,
-    default: '松开加载更多'
-  })
-  readonly ready!: string;
-  @Prop({
-    type: String, 
-    default: '加载中...'
-  })
-  readonly loading!: string;
-  @Prop({
-    type: String
-  })
-  readonly finish!: string;
-  get text() {
-    let text = "";
-    const type = this.type;
-    if (type === "initial") text = this.initial;
-    if (type === "ready") text = this.ready;
-    if (type === "loading") text = this.loading;
-    if (type === "finish") text = this.finish;
-    return text;
-  }
-  get wrapClassName() {
-    const name = 'vtnt-refresh-column__wrap'
-    return this.up ? name + '--up' : name + '--down'
-  }
+const refreshColumn = Vue.extend({
+  props: {
+    type:{
+      type: String
+    },
+    up:{
+      type:Boolean
+    },
+    down:{
+      type:Boolean
+    },
+    initial:{
+      type: String,
+      default: '上拉可以加载更多'
+    },
+    ready:{
+      type: String,
+      default: '松开加载更多'
+    },
+    loading:{
+      type: String, 
+      default: '加载中...'
+    },
+    finish:{
+      type: String
+    }
+  },
+  computed: {
+    text():string {
+      let text = "";
+      const type = this.type;
+      if (type === "initial") text = this.initial;
+      if (type === "ready") text = this.ready;
+      if (type === "loading") text = this.loading;
+      if (type === "finish") text = this.finish;
+      return text;
+    },
+    wrapClassName():string {
+      const name = 'vtnt-refresh-column__wrap'
+      return this.up ? name + '--up' : name + '--down'
+    }
+  },
   render() {
     return <div class={['vtnt-refresh-column__wrap',this.wrapClassName]}>
       <span >{this.text}</span>
     </div>
   }
-}
+})
+export default refreshColumn

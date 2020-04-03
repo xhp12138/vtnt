@@ -1,0 +1,83 @@
+@charset "UTF-8";
+.vtnt-icon__container--default {
+  font-size: inherit;
+}
+
+.vtnt-icon__container--font {
+  font-family: "vtnt-icon" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+
+@font-face {
+  font-family: "vtnt-icon";
+  /* project id 1708838 */
+  src: url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot");
+  src: url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff2") format("woff2"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff") format("woff"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.ttf") format("truetype"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.svg#iconfont") format("svg");
+}
+.vtnt-icon-arrow-down:before {
+  content: "";
+}
+
+.vtnt-icon-add::before {
+  content: "";
+}
+
+.vtnt-icon-error::before {
+  content: "";
+}
+.vtnt-upload__file-list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vtnt-upload__file-item {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  margin: 0 5px 5px 0;
+}
+.vtnt-upload__file-item--add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted #e5e5e5;
+}
+
+.vtnt-upload__file-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.vtnt-upload__file-mask > span {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+.vtnt-upload__file-img {
+  width: 80px;
+  height: 80px;
+}
+
+.vtnt-upload__input {
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}

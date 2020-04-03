@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.vtnt-icon__container--default {
+  font-size: inherit;
+}
+
+.vtnt-icon__container--font {
+  font-family: "vtnt-icon" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+
+@font-face {
+  font-family: "vtnt-icon";
+  /* project id 1708838 */
+  src: url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot");
+  src: url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff2") format("woff2"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff") format("woff"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.ttf") format("truetype"), url("//at.alicdn.com/t/font_1708838_m4k6jes1erm.svg#iconfont") format("svg");
+}
+.vtnt-icon-arrow-down:before {
+  content: "";
+}
+
+.vtnt-icon-add::before {
+  content: "";
+}
+
+.vtnt-icon-error::before {
+  content: "";
+}

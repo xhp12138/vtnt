@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-18 13:33:34
- * @LastEditTime: 2020-03-24 11:11:09
+ * @LastEditTime: 2020-04-03 10:21:28
  * @FilePath: /mywork/myStudy/vtnt/README.md
  -->
 
@@ -20,7 +20,7 @@ VTNT
 - upload(上传)
 
 ## Features
-- 完整引入 
+- 按需加载/完整引入 
 - 支持TypeScript
 
 ## Build Setup

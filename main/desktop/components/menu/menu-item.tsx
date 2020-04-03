@@ -25,7 +25,6 @@ export default class vtntMenuItem extends Vue {
         this.Menu.handleMenuItem(this.index)
     } 
     get isSelect() {
-        console.log(this.index, this.Menu.activeIndex)
         return this.index === this.Menu.activeIndexCache[0]
     }
     render(): VNode { 

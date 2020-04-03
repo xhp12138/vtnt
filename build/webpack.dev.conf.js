@@ -2,7 +2,7 @@ const base = require('./webpack.base.conf');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const {transformPath} = require('./utils');
+const {transformPath,styleloader} = require('./utils');
 const entry = {
   'mobile':'./main/mobile/index.ts',
   'desktop': './main/desktop/index.ts'
@@ -25,16 +25,7 @@ const dev = merge(base, {
   stats: 'none',
   mode: 'development',
   module:{
-    // rules: [
-    //   {
-    //     test: /\.tsx|ts?$/,
-    //     loader: 'ts-loader',
-    //     options: {
-    //       // disable type checker - we will use it in fork plugin
-    //       transpileOnly: true
-    //     }
-    //   }
-    // ]
+    rules: styleloader(['css','scss'],process.env.NODE_ENV)
   },
   plugins: [
    ...htmlPlugin(),
