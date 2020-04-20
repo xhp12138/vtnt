@@ -1,17 +1,23 @@
 
-@import "../../src/styles/mixins/index.scss";
-@import '../../src/styles/resets.scss';
+@import "main/desktop/styles/index.scss";
 @include b(ds,false) {
-    @include e(wrap) {
+    @include e(wrap) { 
         height: 100%;
         padding-top: 50px;
         box-sizing: border-box;
+        min-width: 1000px;
+    }
+    @include e(container) {
+        overflow: hidden;
+        height: 100%;
     }
     @include e(main-block) {
         float: left;
         @include m(left) {
             width: 200px;
             margin-left: -100%;
+            height: 100%;
+            overflow-y: scroll;
         }
         @include m(main) {
             width: 100%;
@@ -23,6 +29,27 @@
     }
     @include e(content) {
         margin: 0 400px 0 200px;
+        padding: 0 30px;
+        height: 100%;
+        table {
+            width: 100%;
+            line-height: 1.5;
+            text-align: left;
+            border-spacing: 2px;
+            font-size: 14px; 
+            em {
+                color: #409eff;
+            }
+        }
+        thead {
+            font-weight: 500;
+        }
+        tr {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        th,td {
+            padding: 10px;        
+        }
     }
 
 }

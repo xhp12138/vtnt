@@ -4,6 +4,7 @@
     height: $menu-item-height;
     line-height: $menu-item-height;
     text-align: center;
+    background-color: #ffffff;
     @include m (active) {
         background: $menu-item-active-bg;
         color:$theme-color;

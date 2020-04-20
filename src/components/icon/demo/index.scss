@@ -1,0 +1,32 @@
+@import "@/styles/mixins/index.scss";
+@include b(icon-demo,false) {
+    @include e(list) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    @include e(item) {
+        width: 25%;
+        overflow: hidden;
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            margin-bottom: 100%; 
+        } 
+    }
+    @include e(item-content) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 2;
+    }
+ 
+}

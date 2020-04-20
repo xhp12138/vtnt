@@ -1,15 +1,15 @@
 @import "../../../../src/styles/mixins/index.scss";
 @include b(mw,false) {
    @include e(wrap) {
-       background: url('../../../assets/phone.jpg');
-       width: 300px;
-       height: 600px;
-       background-size: 100% 100%;
+       width: 350px;
+       height: 700px;
+       border-radius: 15px;
+       background-color: #ffffff;
+       margin: 0 auto;
        iframe {
-        padding: 74px 20px 74px 20px;
         box-sizing: border-box;
         height: 100%;
         width: 100%;
        }
-   }
+   } 
 }

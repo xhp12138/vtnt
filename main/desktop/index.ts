@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './App';
+import App from './App'; 
 import createRouter from '../router';
 import store from './store'; 
 import {SET_PATH} from './store/mutations-type'

@@ -17,14 +17,14 @@ var webpackConfig = {
         }]
       },
       {
-        test: /\.(png|jpe?g|gif|svg|eot|ttf|otf|woff2?)(\?.*)?$/,
+        test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [{
           loader: 'url-loader',
-          options: {
-            limit: 20000, // 20kb内的图片转base64
-            name: '[name].[ext]',
-            fallback: 'file-loader'
-          }
+          // options: {
+          //   limit: 20000, // 20kb内的图片转base64
+          //   name: '[name].[ext]',
+          //   fallback: 'file-loader'
+          // }
         }]
       },
       {
@@ -45,7 +45,8 @@ var webpackConfig = {
       // utils: utils.resolve('../src/' + project + '/utils'),
       // plugins: utils.resolve('../plugins'),
       lib: transformPath('lib'),
-      '@': transformPath('src')
+      '@': transformPath('src'),
+      main: transformPath('main')
     }
   },
   plugins: [

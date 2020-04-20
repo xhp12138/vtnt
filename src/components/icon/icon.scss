@@ -3,32 +3,14 @@
 @include b(icon) {
   @include e(container) {
     @include m(default) {
-        font-size:inherit;
+      font-size: inherit;
     }
+
     @include m(font) {
-        font-family: "vtnt-icon" !important;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 1;
+      font-family: "vtnt-icon" !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1;
     }
   }
-}
-
-@font-face {
-  font-family: 'vtnt-icon';  /* project id 1708838 */
-  src: url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot');
-  src: url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1708838_m4k6jes1erm.svg#iconfont') format('svg');
-}
-.vtnt-icon-arrow-down:before {
-    content: '\e625';
-}
-.vtnt-icon-add::before {
-  content: '\e601';
-}
-.vtnt-icon-error::before {
-  content: '\e621';
 }

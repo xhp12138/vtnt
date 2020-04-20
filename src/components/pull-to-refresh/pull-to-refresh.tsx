@@ -81,6 +81,7 @@ const vtntPullToRefresh = Vue.extend({
     },
     move(e: TouchEvent) {
       const mY = e.touches[0].clientY;
+      console.log(mY);
       if (this.isCanMove(mY)) {
         let diff = mY - this.startY;
         if (this.distanceToRefresh <= Math.abs(diff)) {
@@ -112,13 +113,14 @@ const vtntPullToRefresh = Vue.extend({
       this.resetStatus();
     },
     isCanMove(mY: number): boolean {
+      if (this.loadingType === 'ready') return false
       const wrap = this.wrap;
       const scrollHeight = wrap.scrollHeight;
       const scrollTop = wrap.scrollTop;
       const clinetH = wrap.clientHeight;
       let diff = mY - this.startY;
       if (scrollTop === 0 && this.down) {
-        return true
+        return true //TODO: 已触顶
       }
       if (scrollTop > 0 && this.up) {
         console.log('上拉')
@@ -127,6 +129,7 @@ const vtntPullToRefresh = Vue.extend({
           return true;
         } else {
           this.startY = mY;
+          this.diff = 0 //TODO: 修正 diff 
           return false
         }
       }
@@ -199,6 +202,6 @@ const vtntPullToRefresh = Vue.extend({
     </div>
   }
 })
-vtntPullToRefresh.cptName ='vtnvtntPullToRefreshtForm'
+vtntPullToRefresh.cptName ='vtntPullToRefresh'
 export default vtntPullToRefresh
 

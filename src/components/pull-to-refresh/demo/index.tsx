@@ -6,7 +6,7 @@ import './index.scss';
 export default class vtntPullToRefreshDemo extends Vue {
     render() {
         return <div class='test'>
-            <vtnt-pull-to-refresh down>
+            <vtnt-pull-to-refresh distanceToRefresh="20" down>
                     <div>22222</div>
                     <div>22222</div>
                     <div>22222</div>

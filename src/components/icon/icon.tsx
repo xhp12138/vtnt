@@ -1,6 +1,7 @@
 
 import Vue from 'vue';
 import './icon.scss';
+import "@/assets/iconfont/iconfont.scss";  
 const vtntIcon = Vue.extend({
     name: 'vtnt-icon',
     props: {

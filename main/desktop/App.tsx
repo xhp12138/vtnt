@@ -8,7 +8,6 @@ import components from '../../src/components/components.json';
         mobileWrap
     }
 })
-
 export default class App extends Vue {
     test = '1';
     params = {
@@ -23,7 +22,7 @@ export default class App extends Vue {
     }
     handleSubmit() {
         this.$refs.form.validator()
-    }
+    } 
     render(): VNode {
         const cpt:any = components;
         const menuItem = Object.keys(cpt).map((name: any) => {

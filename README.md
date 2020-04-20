@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-18 13:33:34
- * @LastEditTime: 2020-04-03 10:21:28
+ * @LastEditTime: 2020-04-20 15:18:31
  * @FilePath: /mywork/myStudy/vtnt/README.md
  -->
 
@@ -18,10 +18,10 @@ VTNT
 - pull-to-refresh(上拉加载/下拉刷新)
 - slider(滑块)
 - upload(上传)
-
+- lazy-load(图片懒加载)
 ## Features
 - 按需加载/完整引入 
-- 支持TypeScript
+- TypeScript
 
 ## Build Setup
 

@@ -9,7 +9,7 @@ const build = merge(base, {
     index: transformPath('src/components/index.ts')
   },
   module:{
-    rules: styleloader(['scss'],process.env.NODE_ENV)
+    rules: styleloader(['css','scss'],process.env.NODE_ENV)
   },
   output: {
     path: transformPath('lib'),

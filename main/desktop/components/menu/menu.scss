@@ -1,4 +1,6 @@
 @import "../../styles/index.scss";
 @include b(menu,true) {
     font-size: 14px;
+    height: 100%;
+    background-color: #ffffff;
 }

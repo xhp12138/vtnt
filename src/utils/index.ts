@@ -73,3 +73,17 @@ export function on(element:Node,event:string,handler:(...args:Array<any>)=> void
 export function off(element:Node,event:string,handler:(...args:Array<any>)=> void) {
     return element.removeEventListener(event,handler,false)
 }
+
+export function throttle(fn:(...args:any)=> any,time:number) {
+    let status = true 
+    return function (...args:any) {
+        if (!status) return 
+        status = false 
+        const self = this;
+        const t = setTimeout(function() {
+            fn.call(self,...args)
+            status = true
+            clearTimeout(t);
+        },time)
+    }
+}
