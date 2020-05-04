@@ -1,0 +1,106 @@
+.vtnt-line-left {
+  position: relative; }
+  .vtnt-line-left:before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleX(0.5); }
+
+.vtnt-line-right {
+  position: relative; }
+  .vtnt-line-right:before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 1px;
+    height: 100%;
+    transform: scaleX(0.5); }
+
+.vtnt-line-bottom {
+  position: relative; }
+  .vtnt-line-bottom:before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5); }
+
+.vtnt-line-top {
+  position: relative; }
+  .vtnt-line-top:before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5); }
+
+.vtnt-both-line {
+  position: relative; }
+  .vtnt-both-line:before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5); }
+  .vtnt-both-line::after {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5); }
+
+input {
+  font: inherit; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ellipsis_2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }

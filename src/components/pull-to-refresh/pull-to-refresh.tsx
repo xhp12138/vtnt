@@ -123,7 +123,7 @@ const vtntPullToRefresh = Vue.extend({
         return true //TODO: 已触顶
       }
       if (scrollTop > 0 && this.up) {
-        console.log('上拉')
+        //console.log('上拉')
         const curretH = Math.round(scrollHeight - scrollTop);
         if (curretH === clinetH || curretH === (clinetH + 1) || curretH === (clinetH - 1) && diff >= 0) {
           return true;

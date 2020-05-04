@@ -11,18 +11,23 @@ const isExistFile = (path) => {
 }
 const styleloader = (loaders, mode) => {
   const out = [];
-  loaders.forEach(loaderName => {
+  loaders.forEach(loader => {
+    const {name,exclude} = loader;
     const defaultLoader = [mode === 'production'
       ? {
         loader: MiniCssExtractPlugin.loader,
+        options: {
+          publicPath: './style'
+        }
       }
       : 'style-loader']
-    if (loaderName !== 'css') defaultLoader.push('css-loader')
-    const loader = loaderName == 'scss' ? 'sass-loader' : loaderName + '-loader'
-    defaultLoader.push(loader)
+    if (name !== 'css') defaultLoader.push('css-loader')
+    const Loader = name == 'scss' ? 'sass-loader' : name + '-loader'
+    defaultLoader.push(Loader)
     out.push({
-      test: new RegExp('\\.' + loaderName + '$'),
-      use: defaultLoader
+      test: new RegExp('\\.' + name + '$'),
+      use: defaultLoader,
+      exclude: exclude || []
     })
   });
   return out

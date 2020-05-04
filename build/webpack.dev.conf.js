@@ -25,7 +25,11 @@ const dev = merge(base, {
   stats: 'none',
   mode: 'development',
   module:{
-    rules: styleloader(['css','scss'],process.env.NODE_ENV)
+    rules: styleloader(
+    [
+      {name:'css'},
+      {name:'scss'}
+    ],process.env.NODE_ENV)
   },
   plugins: [
    ...htmlPlugin(),

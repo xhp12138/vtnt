@@ -14,7 +14,7 @@ const createRouter = (mobile = false) => {
     if (path) routes.push({
       path: `/${k}`,
       name: k,
-      component: () => import(`@/${path}`) //TODO 采用模板字符串传入的方式解决import 动态加载失败的问题
+      component: require(`@/${path}`).default //TODO 采用模板字符串传入的方式解决import 动态加载失败的问题
     })
   }
   return new VueRouter({

@@ -29,9 +29,12 @@ components.forEach((componentName) => {
 })
 const installList = transformComponents.map(i => i.value + '').join('\n')
 const componentList = transformComponents.map(i => i.key).join(',')
+const commonSass = process.env.NODE_ENV == 'production' ? `require('../styles/common.scss')` : '';
+console.log(commonSass)
 const template = render(`
 import vue from 'vue';
 {{installList}}
+{{commonSass}}
 const components = [{{componentList}}]
 const install = () => {
     components.forEach((component) => {
@@ -45,7 +48,8 @@ export default {
 `, {
     installList,
     componentList,
-    exportList: `{${componentList}}`
+    exportList: `{${componentList}}`,
+    commonSass
 });
 const josnTemplate = {}
 transformComponents.forEach(i => {

@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-26 14:53:07
- * @LastEditTime: 2020-04-03 09:53:38
+ * @LastEditTime: 2020-05-03 15:54:12
  * @FilePath: /mywork/myStudy/vtnt/build/webpack.components.conf.js
  */
 const base = require('./webpack.base.conf');
@@ -16,7 +16,7 @@ const build = merge(base, {
   mode: 'development',
   entry:componentsEntry(),
   module:{
-    rules: styleloader(['scss'],process.env.NODE_ENV)
+    rules: styleloader([{name:'scss',exexclude:[transformPath('src/styles/common')]}],process.env.NODE_ENV)
   },
   output: {
     path: transformPath('lib'),
@@ -34,12 +34,10 @@ const build = merge(base, {
       complete:'█'
     }),
     new MiniCssExtractPlugin({
-      moduleFilename() {
-        return './[name]/index.css'
-      }
+      filename:'[name]/style/[name].css'
     })
   ],
-  externals:webpackExternals(['mixins', 'utils']),
+  externals:webpackExternals(['mixins', 'utils','styles']),
 });
 module.exports = build;
 
