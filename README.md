@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-18 13:33:34
- * @LastEditTime: 2020-04-20 15:18:31
+ * @LastEditTime: 2020-05-04 13:26:11
  * @FilePath: /mywork/myStudy/vtnt/README.md
  -->
 
@@ -19,6 +19,7 @@ VTNT
 - slider(滑块)
 - upload(上传)
 - lazy-load(图片懒加载)
+- picker(选择器)
 ## Features
 - 按需加载/完整引入 
 - TypeScript

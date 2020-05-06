@@ -9,7 +9,7 @@ import picker from './picker/'
 import pullToRefresh from './pull-to-refresh/'
 import slider from './slider/'
 import upload from './upload/'
-require('../styles/common.scss')
+
 const components = [form,formItem,icon,input,lazyLoad,picker,pullToRefresh,slider,upload]
 const install = () => {
     components.forEach((component) => {
