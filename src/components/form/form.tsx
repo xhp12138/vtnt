@@ -1,7 +1,7 @@
 import Vue from 'vue';
 interface data {
     formItemCpt: Array<Vue>
-}
+} 
 const vtntForm = Vue.extend({
     name: 'vtnt-form',
     provide() {

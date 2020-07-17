@@ -11,7 +11,7 @@ export default class vtntFormDemo extends Vue {
         input1: [{
             type: 'string',
             required: true,
-            message: '字段🙅‍♂️为空'
+            message: '字段🙅‍♂️ 2为空'
         }]
     }
     handleSubmit() {
