@@ -5,9 +5,11 @@ install:
 - npm install
 script:
 - npm run build
-after_deploy:
+before_deploy: "echo 'are you ok?'"
+deploy:
+  skip_cleanup: true
   provider: npm
-  email: 813531550@qq.com
+  email: "813531550@qq.com"
   api_key:
     secure: dcy7D82sfTLqpqmeSAy+azkZ2K7f66FYAQ5duLNjolaNX2LUCfDNIRHxmA8NFxJhkJliujxWfpcnXrxKYm4eIcw4ZKKLN3Grx+fU+F5lo6B+CLQbfsZyVzu3R5+SoaE84/A5hGq9NgnbmubREBAXuaizt1QaVoIxwhEr1kTmwNd30jdSmMYBHPebMEqqftYWTq27zDs5PA46l35Oy6wDOyKSxt0l9QIGQXlZKo7LQgiSrXm21k6DRiKhy4rds2Qkt3X772pyOkyTW6+ZlTrx6KXh0CfbpYAHi54PTZTkVYS5L+AUIsZ2EDA9D+W4mw6lA+t3XOLKg90XfFw/bnXWJgzoVmk2o1esBf9K8jv4rd5g52rPwTxZlsqC7ZlkPZb/iduZsMtlzh03Cs49bpusstEITAMzJnybcp9xXWhelpFQS3Cl89V8pmMTSOvNwxwMC5uLm0YXlrYvuowBx+K9gEdp7TzexSorh5v8qiSPhqFJQzpA19mHXiDTOXWUfAlTlNTCJIuOE5wJu7MsrDCVtjYVPwBsbN4Nmrg0EtyvKsinAt74kjQ9haznnRcWQRJUs3ZzdjAXl0zYRnSseMm/UuwIvwNlAqfG3hBMEk1jskQO8OgKGRLTskaEO/FOvzZXYo4YCQeLXxjWvLI0kEinhiv9lKGZ5cpOnExlgIstf/Y=
   on:
