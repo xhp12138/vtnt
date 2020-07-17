@@ -4,37 +4,41 @@ interface data {
 }
 const vtntForm = Vue.extend({
     name: 'vtnt-form',
-    data():data {
+    provide() {
+        return {
+            form: this
+        }
+    },
+    data(): data {
         return {
             formItemCpt: []
         }
     },
     props: {
         params: {
-            type:Object
+            type: Object
         },
         rules: {
-            type:Object,
+            type: Object,
             default() {
                 return {}
             }
+        },
+        labelWidth: {
+            type: [String]
         }
     },
     created() {
-        this.$on('form.addItem',(component:any)=> {
+        this.$on('form.addItem', (component: any) => {
             this.formItemCpt.push(component)
             component.setFormCpt(this)
         })
     },
     methods: {
         validator() {
-            const promiseList = this.formItemCpt.map((i:any)=> i.validator());
+            const promiseList = this.formItemCpt.map((i: any) => i.validator());
             console.log(promiseList)
-             Promise.all(promiseList).then(res => {
-                console.log('res',res);
-            }).catch(error => {
-                console.log('error',error)
-            })
+            return Promise.all(promiseList)
         }
     },
     render() {
@@ -44,5 +48,5 @@ const vtntForm = Vue.extend({
     }
 
 })
-vtntForm.cptName ='vtntForm'
+vtntForm.cptName = 'vtntForm'
 export default vtntForm;

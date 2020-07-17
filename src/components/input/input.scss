@@ -1,10 +1,16 @@
 @import "../../styles/mixins/index.scss";
 @include b(input) {
+  @include e(wrap) {
+    width: 100%;
+    display: flex;
+  }
   @include e(container) {
     font:inherit;
     border: none;
     padding: 0;
     margin: 0;
     font-size: $font-middle;
+    width: 100%;
+    flex: 1;
   }
 }

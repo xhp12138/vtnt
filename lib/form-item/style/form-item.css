@@ -1,17 +1,2 @@
-.vtnt-form-item__wrap {
-  font-size: 14px;
-  line-height: 24px;
-  padding: 10px 15px;
-  border-bottom: 1px solid #e5e5e5; }
-
-.vtnt-form-item__require {
-  color: #f5222d; }
-
-.vtnt-form-item__label {
-  float: left;
-  width: 20%; }
-
-.vtnt-form-item__error-tips {
-  margin-left: 20%;
-  color: #f5222d; }
+.vtnt-form-item__wrap{font-size:14px;line-height:24px;padding:10px 15px;border-bottom:1px solid #e5e5e5;display:flex;align-items:flex-start}.vtnt-form-item__require{color:#f5222d}.vtnt-form-item__main{flex:1}.vtnt-form-item__error-tips{color:#f5222d}
 

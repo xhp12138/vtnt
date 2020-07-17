@@ -4,8 +4,7 @@ const vtntInput = Vue.extend({
     name:'vtnt-input',
     props: {
         icon: {
-            type: String,
-            default: 'http://image.bondehome.com/FkcvU1UirUc4MyO8VqFoV9_zZ2V4'
+            type: String
         },
         value: {
             type: [String, Number]
@@ -42,7 +41,8 @@ const vtntInput = Vue.extend({
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
                 onChange={this.handleChange}
-                v-bind="$attrs"
+                value={this.value}
+                {...{attrs:{...this.$attrs}}}
                 type={this.type}
                 class='vtnt-input__container'>
             </input>

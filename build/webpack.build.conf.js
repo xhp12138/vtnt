@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { transformPath,styleloader,webpackExternals} = require('./utils');
 const build = merge(base, {
-  mode: 'development',
+  mode: 'production',
   entry:{
     index: transformPath('src/components/index.ts')
   },

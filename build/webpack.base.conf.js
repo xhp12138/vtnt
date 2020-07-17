@@ -1,5 +1,6 @@
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { transformPath } = require('./utils');
 const path = require('path');
 var webpackConfig = {
@@ -51,6 +52,20 @@ var webpackConfig = {
   },
   plugins: [
     new VueLoaderPlugin()
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        extractComments: true,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger:true,
+            pure_funcs: ['console.info', 'console.debug', 'console.warn']
+          }
+        }
+      }),
+    ],
+  }
 };
 module.exports = webpackConfig;

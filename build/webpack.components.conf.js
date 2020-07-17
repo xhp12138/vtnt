@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-03-26 14:53:07
- * @LastEditTime: 2020-05-03 15:54:12
+ * @LastEditTime: 2020-07-08 15:37:55
  * @FilePath: /mywork/myStudy/vtnt/build/webpack.components.conf.js
  */
 const base = require('./webpack.base.conf');
@@ -13,7 +13,7 @@ const chalk = require('chalk');
 const { transformPath,styleloader,webpackExternals,componentsEntry } = require('./utils');
 
 const build = merge(base, {
-  mode: 'development',
+  mode: 'production',
   entry:componentsEntry(),
   module:{
     rules: styleloader([{name:'scss',exexclude:[transformPath('src/styles/common')]}],process.env.NODE_ENV)

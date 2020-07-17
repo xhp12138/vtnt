@@ -2,18 +2,21 @@ import Vue from 'vue';
 import penetrateMixins from '@/mixins/penetrate';
 import './form-item.scss';
 import schema from 'async-validator';
-import { checkParam ,paramResult,paramResultValue} from '@/utils/index';
+import { checkParam, paramResult, paramResultValue } from '@/utils/index';
 interface data {
     formCpt: any
-    errorMsg: string
+    errorMsg: string,
+    isFormItemError: boolean
 }
 const vtntFormItem = penetrateMixins.extend({
     name: 'vtnt-form-item',
-    data():data {
+    inject: ['form'],
+    data(): data {
         return {
             formCpt: {},
-            errorMsg: ''
-        } 
+            errorMsg: '',
+            isFormItemError: false,
+        }
     },
     props: {
         label: {
@@ -28,6 +31,9 @@ const vtntFormItem = penetrateMixins.extend({
             default: function () {
                 return [];
             }
+        },
+        labelWidth: {
+            type: [String]
         }
     },
     created() {
@@ -41,16 +47,21 @@ const vtntFormItem = penetrateMixins.extend({
             const descriptor = {
                 [ruleKey]: this.formItemRule.l ? this.formItemRule.v : this.formRules.v
             }
-            
             const validator = new schema(descriptor);
             console.log(validator)
             const params = {
                 [ruleKey]: this.formParamValue.v
             }
-            const promise = validator.validate(params)
-
-            promise.catch(error => {
-                if (error && error.errors && error.errors.length) this.errorMsg = error.errors[0].message || ''
+            const promise = validator.validate(params);
+            promise.then(res => {
+                this.errorMsg = '';
+                this.isFormItemError = false;
+            })
+            .catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    this.errorMsg = error.errors[0].message || ''
+                    this.isFormItemError = true;
+                }
             })
             return promise
         },
@@ -77,39 +88,46 @@ const vtntFormItem = penetrateMixins.extend({
         }
     },
     computed: {
-        formRules():paramResult {
+        formRules(): paramResult {
             const rules = this.formCpt.rules;
             return checkParam(rules, 'object', this.ruleKey);;
         },
-        formItemRule():paramResult {
+        formItemRule(): paramResult {
             const rule = this.rule;
             return checkParam(rule, 'object.length');
         },
-         formParamValue():paramResult {
+        formParamValue(): paramResult {
             const params = this.formCpt.params;
             return checkParam(params, 'object', this.ruleKey);
         },
-         isValidator():boolean{
+        isValidator(): boolean {
             return (this.formRules.l || this.formItemRule.l) && this.formParamValue.l
         },
-        isRequire():boolean {
+        isRequire(): boolean {
             return this.isValidator && this.foundRequire(this.rules)
         },
-        rules():paramResultValue {
+        rules(): paramResultValue {
             return this.formItemRule.l ? this.formItemRule.v : this.formRules.v
         },
+        labelWidthStyle(): object {
+            const labelWidth = this.labelWidth ? this.labelWidth : this.form.labelWidth;
+            return labelWidth ? { 'width': labelWidth } : {};
+        }
     },
     render() {
-        const { label, errorMsg } = this;
+        const { label, errorMsg, isFormItemError } = this;
         const require = this.isRequire && <span class='vtnt-form-item__require'>*</span>
-        return <div class='vtnt-form-item__wrap'>
-            <label class='vtnt-form-item__label'>{label}{require}</label>
-            <div class='vtnt-form-item__form'>
+        return <div class={{
+            'vtnt-form-item__wrap': true,
+            'is-error': isFormItemError
+        }}>
+            <label class='vtnt-form-item__label' style={this.labelWidthStyle}>{label}{require}</label>
+            <div class='vtnt-form-item__main'>
                 {this.$slots.default}
                 <div class='vtnt-form-item__error-tips'>{errorMsg}</div>
             </div>
         </div>
     }
 })
-vtntFormItem.cptName ='vtntFormItem'
+vtntFormItem.cptName = 'vtntFormItem'
 export default vtntFormItem;

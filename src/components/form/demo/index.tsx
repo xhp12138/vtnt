@@ -5,7 +5,7 @@ import { VNode } from 'vue'
 })
 export default class vtntFormDemo extends Vue {
     params = {
-        input1: ''
+        input1: '2222'
     }
     rules = {
         input1: [{
@@ -18,11 +18,11 @@ export default class vtntFormDemo extends Vue {
         this.$refs.form.validator()
     }
     render(): VNode {
-        const { rules, params } = this;
+        const { rules, params } = this; 
         return <div>
-            <vtnt-form ref="form" rules={rules} params={params}>
-                <vtnt-form-item label='文本' ruleKey='input1'>
-                    <vtnt-input></vtnt-input>
+            <vtnt-form label-width="30%" ref="form" rules={rules} params={params}>
+                <vtnt-form-item  label='文本' ruleKey='input1'>
+                    <vtnt-input disabled  vModel={params.input1} placeholder='请输入2文本'></vtnt-input>
                 </vtnt-form-item>
                 <vtnt-form-item label='test' ruleKey='input1'>
                     <vtnt-icon name='arrow-down'></vtnt-icon>

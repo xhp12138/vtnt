@@ -2,7 +2,7 @@
  * @Description: 
  * @LastEditors: xhp
  * @Date: 2020-04-17 09:37:23
- * @LastEditTime: 2020-04-17 15:24:32
+ * @LastEditTime: 2020-05-07 23:01:26
  * @FilePath: /mywork/myStudy/vtnt/src/components/lazy-load/monitor.ts
  */
 class Monitor {
@@ -33,6 +33,7 @@ class Monitor {
     }
     check() {
         const client = this.el.getBoundingClientRect();
+        console.log(client)
         const vertical = (client.top <= this.viewport.h) || (this.viewport.h >= client.bottom - client.height && client.bottom >= 0)
         const level = (client.left  <= this.viewport.w) || (this.viewport.w >= client.right - client.width && client.right >=0)
         if (vertical && level) return true 
