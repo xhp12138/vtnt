@@ -3,6 +3,8 @@ node_js:
 - '10'
 install:
 - npm install
+before_script:
+- npm install -g npm@'>=3'
 script:
 - npm run build
 before_deploy: "echo 'are you ok?'"
