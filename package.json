@@ -79,12 +79,22 @@
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   },
-  "author": "813531550@qq.com",
   "license": "ISC",
   "main": "lib/index.js",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhp12138/vtnt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xhp12138/vtnt/issues"
+  },
+  "homepage": "https://github.com/xhp12138/vtnt#readme"
 }
